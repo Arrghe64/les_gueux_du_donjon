@@ -1,0 +1,195 @@
+:root {
+  --bg-color: #1a1a1a;
+  --card-bg: #f0f0f0;
+  --monster-color: #2c3e50;
+  --potion-color: #e74c3c;
+  --weapon-color: #f1c40f;
+  --text-light: #ecf0f1;
+  --card-width: 80px;
+  --card-height: 120px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#game-container {
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  h1 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  #log-message {
+    width: 400px;
+    margin-bottom: 20px;
+  }
+  #stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+}
+/* Grille pour la salle (2x2 sur mobile) */
+#room {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+#hp.danger {
+  color: #ff4757;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.card-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
+}
+.card.uncommon {
+    border: 2px solid #3498db; /* Bleu pour les objets corrects */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+.card.rare {
+    border: 2px solid #f1c40f; /* Or pour les As et grosses armes/monstres */
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+    animation: pulse-gold 2s infinite;
+}
+@keyframes pulse-gold {
+    0% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(241, 196, 15, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.5); }
+}
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.1s,
+    opacity 0.3s;
+  user-select: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  /* animation: slideIn 0.4s ease-out forwards; */
+}
+.card.fade-out {
+  opacity: 0;
+  transform: translateY(-40px) scale(1.1);
+  pointer-events: none;
+  transition: all 0.4s ease-in;
+}
+.card.new-card {
+  animation: slideIn 0.5s ease-out forwards;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.card:active {
+  transform: scale(0.95);
+}
+.card.empty {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  pointer-events: none;
+}
+/* Couleur par type */
+.card[data-suit="spades"],
+.card[data-suit="clubs"] {
+  border: 3px solid var(--monster-color);
+}
+.card[data-suit="hearts"] {
+  border: 3px solid var(--potion-color);
+  color: var(--potion-color);
+}
+.card[data-suit="diamonds"] {
+  border: 3px solid var(--weapon-color);
+  color: #b7950b;
+}
+
+footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:disabled {
+  background-color: #7f8c8d;
+  opacity: 0.5;
+}
+
+/* Ajustement pour les tablettes ou écrans plus larges */
+@media (min-width: 400px) {
+  :root {
+    --card-width: 100px;
+    --card-height: 150px;
+  }
+}
