@@ -55,10 +55,12 @@ header {
 }
 /* Grille pour la salle (2x2 sur mobile) */
 #room {
+  background-image: url("../Assets/ambiance.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   gap: 15px;
   justify-items: center;
   align-items: center;
