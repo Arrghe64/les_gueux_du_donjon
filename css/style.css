@@ -58,6 +58,7 @@ header {
   background-image: url("../Assets/ambiance.png");
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
