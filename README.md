@@ -14,8 +14,8 @@ Le deck représente un donjon. Chaque salle est représentée par 4 cartes. Vous
 ### Les Enseignes (Suits)
 | Icône | Type | Description |
 | :---: | :--- | :--- |
-| ![Potion](Assets/icons/lightPition.png) | **Cœurs** | **Potions** : Vous redonnent de la vie. Attention à l'overdose (1 seule par salle) ! |
-| ![Arme](Assets/icons/weaponSword.png) | **Carreaux** | **Armes** : Réduisent les dégâts des monstres. Une nouvelle arme remplace toujours la précédente. |
+| ![Potion](Assets/icons/lightPotion.png) | **Cœurs** | **Potions** : Vous redonnent de la vie. Attention à l'overdose (1 seule par salle) ! |
+| ![Arme](Assets/icons/weaponSword.png) | **Carreaux** | **Armes** : Réduisent les dégâts des monstres. Choisir une nouvelle arme remplace toujours la précédente. |
 | ![Monstre](Assets/icons/monsterSpider.png) | **Trèfles & Piques** | **Monstres** : Ils vous infligent des dégâts. Combattez-les avec votre arme ou vos poings ! |
 
 ---
