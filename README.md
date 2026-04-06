@@ -3,7 +3,7 @@
 **Gueux & Donjon** est un jeu de cartes de type *Dungeon Crawler* minimaliste, codé en JavaScript pur (Vanilla JS). Inspiré par les mécaniques célèbres du jeu *Scoundrel*, il vous plonge dans la peau d'un aventurier démuni qui doit traverser un deck de 44 cartes pour sortir vivant d'un donjon.
 
 <p align="center">
-  <img src="assets/images/capture.png" width="600" alt="Capture d'écran Gueux et Donjon">
+  <img src="Assets/capture.png" width="600" alt="Capture d'écran Gueux et Donjon">
 </p>
 
 ---
