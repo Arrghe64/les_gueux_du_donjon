@@ -10,6 +10,14 @@ class Game {
     this.deck.shuffle();
     this.initElements();
     this.potionUsedInThisRoom = false;
+    this.sounds = {
+      bgMusic: new Audio("Assets/sounds/musiqueAmbiance.mp3"),
+      draw: new Audio("Assets/sounds/cartes_distrib.mp3"),
+      click: new Audio("Assets/sounds/carte_clic.mp3")
+    }
+    this.sounds.bgMusic.loop = true;
+    this.sounds.bgMusic.volume = 0.4;
+    this.sounds.click.volume = 0.5;
   }
   initElements() {
     this.hpDisplay = document.getElementById("hp");
@@ -20,6 +28,7 @@ class Game {
     this.nextRoomBtn.onclick = () => this.nextRoom();
   }
   start() {
+    this.sounds.bgMusic.play().catch(e => console.log("Musique en attente d'interaction utilisateur"));
     this.loadRoom();
   }
   loadRoom() {
@@ -42,6 +51,7 @@ class Game {
     this.roomCards = [...remainingCards, ...newCards];
     this.cardsPlayedThisRoom = 0;
     this.potionUsedInThisRoom = false;
+    this.sounds.draw.play();
     this.renderRoom();
     this.updateUI();
     // Si après avoir pioché tout est vide (cas rare), victoire
@@ -103,6 +113,9 @@ class Game {
   handleCardClick(index) {
     const card = this.roomCards[index];
     if (!card) return;
+
+    this.sounds.click.currentTime = 0;
+    this.sounds.click.play();
 
     // 1. Trouver l'élément HTML correspondant
     const cardElements = this.roomContainer.querySelectorAll(".card");

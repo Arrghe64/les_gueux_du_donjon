@@ -11,15 +11,6 @@ class Deck {
     this.initialize();
   }
 
-  // initialize() {
-  //   const suits = [SUITS.SPADES, SUITS.CLUBS, SUITS.HEARTS, SUITS.DIAMONDS];
-  //   for (let suit of suits) {
-  //     for (let value = 2; value <= 14; value++) {
-  //       // 11=J, 12=Q, 13=K, 14=A
-  //       this.cards.push({ suit, value });
-  //     }
-  //   }
-  // }
   initialize() {
     const suits = [SUITS.SPADES, SUITS.CLUBS, SUITS.HEARTS, SUITS.DIAMONDS];
 
