@@ -43,6 +43,8 @@ Pour lancer le jeu :
 1. Clonez le dépôt : `git clone https://github.com/VOTRE_NOM/gueux-et-donjon.git`
 2. Ouvrez le fichier `index.html` dans votre navigateur.
 
+Ou lancez le jeu à partir de `https://arrghe64.github.io/les_gueux_du_donjon/`
+
 ---
 
 ## 🌟 Crédits
