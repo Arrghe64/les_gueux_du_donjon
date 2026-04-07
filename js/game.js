@@ -78,7 +78,7 @@ class Game {
         // cardElement.innerHTML = `<span>${this.getCardLabel(card.value)}</span><span>${this.getSuitSymbol(card.suit)}</span>`;
         cardElement.innerHTML = `
           <div class="card-value">${this.getCardLabel(card.value)}</div>
-          <img src="assets/icons/${fileName}.png" class="card-icon" alt="${card.suit}">
+          <img src="Assets/icons/${fileName}.png" class="card-icon" alt="${card.suit}">
           <div class="card-suit-mini">${this.getSuitSymbol(card.suit)}</div>
         `;
         cardElement.onclick = () => this.handleCardClick(index);
